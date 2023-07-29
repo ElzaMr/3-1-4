@@ -44,21 +44,6 @@ public class AdminController {
         return "ADMIN/adminPage";
     }
 
-    @GetMapping()
-    public String getAllUser(Principal principal, Model model) {
-        model.addAttribute("admin", userService.getUserByUsername(principal.getName()));
-        List<Role> listOfRoles = roleService.getAllRoles();
-        model.addAttribute("listOfRoles", listOfRoles);
-        return "ADMIN/users";
-    }
-
-    @GetMapping(value = "/user/{id}")
-    public String getUser(@PathVariable("id") int id, Model model) {
-        User user = userService.getUserById(id);
-        model.addAttribute("listOfUser", user);
-        return "User/user";
-    }
-
     @GetMapping(value = "/new")
     public String newUser(User user, Model model, Principal principal) {
         model.addAttribute("user1", user);
@@ -75,12 +60,6 @@ public class AdminController {
         }
         userService.save(user);
         return "redirect:/admin/users";
-    }
-
-    @GetMapping(value = "/{id}/update")
-    public String update(Model model, @PathVariable("id") Integer id) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "ADMIN/update";
     }
 
     @PatchMapping(value = "/{id}")
