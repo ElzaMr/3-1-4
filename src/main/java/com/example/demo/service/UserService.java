@@ -9,15 +9,14 @@ import java.util.List;
 public interface UserService {
     public List<User> getAllUsers();
 
-    public User getUserById(int id);
+    public User getUserById(long id);
 
     public void save(User user);
 
     public void update(User updatedUser);
 
-    public void delete(int id);
+    public void delete(long id);
 
     public User getUserByUsername(String username);
 
-    public void saveInit(User user);
 }

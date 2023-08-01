@@ -8,14 +8,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-
 @Service
-public class UserDetailService implements UserDetailsService {
+public class UserDetailServiceImpl implements UserDetailsService {
     private final UserRepo userRepo;
 
     @Autowired
-    public UserDetailService(UserRepo userRepo) {
+    public UserDetailServiceImpl(UserRepo userRepo) {
         this.userRepo = userRepo;
     }
 

@@ -1,6 +1,6 @@
 package com.example.demo.configs;
 
-import com.example.demo.service.UserDetailService;
+import com.example.demo.service.UserDetailServiceImpl;
 import com.example.demo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +17,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final SuccessUserHandler successUserHandler;
-    private final UserDetailService userService;
+    private final UserDetailServiceImpl userService;
 
     @Autowired
-    public WebSecurityConfig(SuccessUserHandler successUserHandler, UserDetailService userService) {
+    public WebSecurityConfig(SuccessUserHandler successUserHandler, UserDetailServiceImpl userService) {
         this.successUserHandler = successUserHandler;
         this.userService = userService;
     }

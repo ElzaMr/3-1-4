@@ -43,10 +43,10 @@ public class Init {
         roleService.saveRole(userRole);
 
         User admin = new User("admin", "admin", 20, "123", adminRoles);
-        userService.saveInit(admin);
+        userService.save(admin);
 
         User user = new User("user", "user", 20, "123", userRoles);
-        userService.saveInit(user);
+        userService.save(user);
     }
 }
 
