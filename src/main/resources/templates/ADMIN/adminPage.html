@@ -20,7 +20,7 @@
                 <span class="navbar-text">
                     <span th:text="${#authentication.name}">Bob</span>
                     with roles: <span th:each="role : ${#authentication.authorities}"
-                                      th:text="${role.getAuthority().replace('ROLE_',' ')}">[ROLE_USER, ROLE_ADMIN]</span>
+                                      th:text="${role.getAuthority()}">[USER, ADMIN]</span>
                 </span>
                 <a class="nav-item text-white nav-link  mr-sm-2 " href="/logout">Logout</a>
             </nav>
